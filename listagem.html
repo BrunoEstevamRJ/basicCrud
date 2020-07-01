@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Listagem</title>
+</head>
+<body>
+    <h2>Listagem</h2>
+    <ul>
+        <h1>teste</h1>
+    {% for transacao in transacoes %}
+        <li><a href="{% url 'url_update' transacao.id %}">
+            {{ transacao.descricao }} - 
+            {{ transacao.valor }} - 
+            {{ transacao.categoria }} - 
+            {{ transacao.data }}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <a href="{% url 'url_nova' %}">NOVO</a>
+
+</body>
+</html>
